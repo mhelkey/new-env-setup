@@ -4,7 +4,13 @@ echo Enter the email associated with your github
 
 read email
 
+echo Enter your full name
+
+read name
+
 ssh-keygen -t ed25519 -C $email
+git config --global user.email $email
+git config --global user.name $name
 
 eval "$(ssh-agent -s)"
 
